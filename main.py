@@ -33,7 +33,7 @@ result = easy_calc()
 print("Result :", result)
 
 
-#2)==========
+#2.1)==========
 def calc_second(count = None):
     count = 2
     attempt = 0
@@ -65,6 +65,51 @@ def calc_second(count = None):
                 return
             print("Result operation in:", res)
 
+    return res
+result = calc_second()
+print("Result :", result)
+
+#2.1)==========
+def calc_second():
+    a = int(input("Enter first number :"))
+    b = int(input("Enter second number :"))
+    operation = input("Enter operation (+, -, *, /) :")
+    if operation == '+':
+        res = a + b
+    elif operation == '-':
+        res = a - b
+    elif operation == '*':
+        res = a * b
+    elif operation == '/':
+        if b != 0:
+            res = a / b
+        else:
+            print("Not valid operation, /0")
+
+    while True:
+        question = input("Want to continue operation???(Y / N) :")
+        if question == "Y" or question == "y":
+            c = int(input("Enter number :"))
+            operation = input("Enter operation (+, -, *, /) :")
+            if operation == '+':
+                res = res + c
+                print("Result operation in:", res)
+            elif operation == '-':
+                res = res - c
+                print("Result operation in:", res)
+            elif operation == '*':
+                res = res * c
+                print("Result operation in:", res)
+            elif operation == '/':
+                if c != 0:
+                    res = res / c
+                else:
+                    print("Not valid operation, /0")
+                    return
+                print("Result operation in:", res)
+        elif question == "N" or question == "n":
+            return res
+            break
     return res
 result = calc_second()
 print("Result :", result)
